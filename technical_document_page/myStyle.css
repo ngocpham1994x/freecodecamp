@@ -1,0 +1,167 @@
+/* Setting a base font size of 10px give us easier rem calculations
+     Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+   */
+
+html{
+    font-size: 10px;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: lavenderblush;
+}
+
+#header, header{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#header{
+    border: 4px solid darkblue;
+    border-radius: 5px;
+    margin: 0 1.5rem;
+    padding: 0.5rem 2rem;
+    width: 20rem;
+    color: darkblue;
+    text-align: center;
+}
+
+header{
+    border-bottom: 1px solid black;
+}
+
+/*page layout*/
+/*layout is modified for @media*/
+#navbar {
+    position: fixed;
+    min-width: 250px;
+    top: 10px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+    border-right: 2px solid rgba(0, 22, 22, 0.4);
+}
+
+#main-doc {
+    position: absolute;
+    margin: 1rem 1.5rem 0 31rem;
+    padding: 0 0 0 0;
+    text-align: left;
+}
+
+/*navbar & nav-link styling*/
+.nav-link{
+    text-decoration: none; /*no underline*/
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    padding: 0.5rem 2rem;
+    width: 20rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+nav ul{
+    list-style-type: none; /*all list belonged to navigation will have no bullet points*/
+}
+
+
+/*positioning navlinks*/
+.nav-box{
+    margin: 5rem 0 0 -2rem;
+}
+
+/* back to top */
+.backtotop {
+    width: 75px;
+    height: 5%;
+    background-color: rgb(245, 182, 100);
+    border-radius: 4px;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 12px;
+    font-weight: 900;
+}
+.backtotop a {
+    text-decoration: none;
+}
+
+/*code styling*/
+code{
+    font-weight: bold;
+    color: darkblue;
+}
+
+.codeblock{
+    background: gainsboro ;
+    border-radius: 1rem;
+    margin: 0 2rem;
+}
+
+table, th, td{
+    border: solid black;
+}
+
+/*footer styling*/
+footer{
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+#info{
+    padding-right: 50px;
+
+}
+
+#info-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin-top: -1rem;
+    margin-right: -1rem;
+}
+.social-media{
+    padding: 1rem;
+}
+
+
+.social-img{
+    display: block;
+    max-width:130px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+}
+
+/*media query*/
+@media only screen and (max-width: 815px){
+    #navbar {
+        position: absolute;
+        max-height: 230px;
+        padding: 0 0;
+        width: 100%;
+        height: 230px;
+        border-bottom: 2px solid rgba(0, 22, 22, 0.4);
+        background:orange;
+        /*hide items that appearance overs the allowable height & able to scroll thru navlinks*/
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+
+    #main-doc {
+        position: relative;
+        margin: 26rem 1.5rem 0 1rem;
+        padding: 0 0 0 0;
+    }
+
+    #header{
+        item-align:center;
+    }
+
+}
