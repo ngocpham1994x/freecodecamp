@@ -1,0 +1,301 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+<nav id="navbar">
+    <header id="header">Python Syntax and Semantics</header>
+    <ul class="nav-box">
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#Indentation">Indentation</a></li>
+        <li><a class="nav-link" href="#Statements_&_Control_Flow">Statements & Control Flow</a></li>
+        <li><a class="nav-link" href="#Expressions">Expressions</a></li>
+        <li><a class="nav-link" href="#Methods">Methods</a></li>
+        <li><a class="nav-link" href="#Typing">Typing</a></li>
+        <li><a class="nav-link" href="#Mathematics">Mathematics</a></li>
+        <li><a class="nav-link" href="#Example">Example</a></li>
+        <li><a class="nav-link" href="#References_&_Resources">References & Resources</a></li>
+    </ul>
+</nav>
+
+<section class="backtotop">
+    <a class="backtotop-btn" href="#navbar">Back to top</a>
+</section>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">
+</head>
+<main id="main-doc">
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <article>
+            <p>Python is an interpreted, high-level, general-purpose programming language.
+                Created by Guido van Rossum and first released in 1991,
+                Python's design philosophy emphasizes code readability with its notable use of significant whitespace.
+                Its language constructs and object-oriented approach aim to help programmers write clear,
+                logical code for small and large-scale projects.
+            </p>
+
+            <p>Python was conceived in the late 1980s as a successor to the ABC language.
+                Python 2.0, released in 2000, introduced features like list comprehensions
+                and a garbage collection system capable of collecting reference cycles.
+                Python 3.0, released in 2008, was a major revision of the language that is not
+                completely backward-compatible, and much Python 2 code does not run unmodified on Python 3.
+            </p>
+
+            <p>The Python 2 language was officially discontinued in 2020 (first planned for 2015),
+                and "Python 2.7.18 is the last Python 2.7 release and therefore the last Python 2 release."
+                No more security patches or other improvements will be released for it.
+                With Python 2's end-of-life, only Python 3.5.x and later are supported.
+            </p>
+
+            <p>Python interpreters are available for many operating systems.
+                A global community of programmers develops and maintains CPython,
+                an open source reference implementation. A non-profit organization,
+                the Python Software Foundation, manages and directs resources for Python and CPython development.
+            </p>
+
+            <nav>
+                <ul>
+                    <li><a class="nav-link2" href="#Introduction">Introduction</a></li>
+                    <li><a class="nav-link2" href="#Indentation">Indentation</a></li>
+                    <li><a class="nav-link2" href="#Statements_&_Control_Flow">Statements & Control Flow</a></li>
+                    <li><a class="nav-link2" href="#Expressions">Expressions</a></li>
+                    <li><a class="nav-link2" href="#Methods">Methods</a></li>
+                    <li><a class="nav-link2" href="#Typing">Typing</a></li>
+                    <li><a class="nav-link2" href="#Math">Mathematics</a></li>
+                    <li><a class="nav-link2" href="#Example">Example</a></li>
+                    <li><a class="nav-link2" href="#References_&_Resources">References & Resources</a></li>
+                </ul>
+            </nav>
+
+            <p>Python is meant to be an easily readable language. Its formatting is visually uncluttered,
+                and it often uses English keywords where other languages use punctuation.
+                Unlike many other languages, it does not use curly brackets to delimit blocks,
+                and semicolons after statements are optional. It has fewer syntactic exceptions
+                and special cases than C or Pascal.
+            </p>
+        </article>
+    </section>
+
+
+
+    <section class="main-section" id="Indentation">
+        <header>Indentation</header>
+        <article>
+            <p>Python uses whitespace indentation, rather than curly brackets or keywords, to delimit blocks.
+                An increase in indentation comes after certain statements; a decrease in indentation signifies the end of the current block. Thus, the program's visual structure accurately represents the program's semantic structure. This feature is sometimes termed the off-side rule, which some other languages share, but in most languages indentation doesn't have any semantic meaning.</p>
+        </article>
+    </section>
+
+
+    <section class="main-section" id="Statements_&_Control_Flow">
+        <header>Statements & Control Flow</header>
+        <article>
+            <p>Python's statements include (among others):
+            <ul>
+                <li>The assignment statement (token '=', the equals sign). This operates differently than in traditional imperative programming languages, and this fundamental mechanism (including the nature of Python's version of variables) illuminates many other features of the language. Assignment in C, e.g., <code>x = 2</code>, translates to "typed variable name x receives a copy of numeric value 2". The (right-hand) value is copied into an allocated storage location for which the (left-hand) variable name is the symbolic address. The memory allocated to the variable is large enough (potentially quite large) for the declared type. In the simplest case of Python assignment, using the same example, <code>x = 2</code>, translates to "(generic) name x receives a reference to a separate, dynamically allocated object of numeric (int) type of value 2." This is termed binding the name to the object. Since the name's storage location doesn't contain the indicated value, it is improper to call it a variable. Names may be subsequently rebound at any time to objects of greatly varying types, including strings, procedures, complex objects with data and methods, etc. Successive assignments of a common value to multiple names, e.g.,<code> x = 2</code>; <code> y = 2</code>;<code> z = 2</code> result in allocating storage to (at most) three names and one numeric object, to which all three names are bound. Since a name is a generic reference holder it is unreasonable to associate a fixed data type with it. However at a given time a name will be bound to some object, which will have a type; thus there is dynamic typing.</li>
+                <li>The <code>if</code> statement, which conditionally executes a block of code, along with <code>else</code> and <code>elif</code> (a contraction of else-if).</li>
+                <li>The <code>for</code> statement, which iterates over an iterable object, capturing each element to a local variable for use by the attached block.</li>
+                <li>The <code>while</code> statement, which executes a block of code as long as its condition is true.</li>
+                <li>The <code>try</code> statement, which allows exceptions raised in its attached code block to be caught and handled by except clauses; it also ensures that clean-up code in a finally block will always be run regardless of how the block exits.</li>
+                <li>The <code>raise</code> statement, used to raise a specified exception or re-raise a caught exception.</li>
+                <li>The <code>class</code> statement, which executes a block of code and attaches its local namespace to a class, for use in object-oriented programming.</li>
+                <li>The <code>def</code> statement, which defines a function or method.</li>
+                <li>The <code>with</code> statement, from Python 2.5 released in September 2006, which encloses a code block within a context manager (for example, acquiring a lock before the block of code is run and releasing the lock afterwards, or opening a file and then closing it), allowing Resource Acquisition Is Initialization (RAII)-like behavior and replaces a common try/finally idiom.</li>
+                <li>The <code>break</code> statement, exits from the loop.</li>
+                <li>The <code>continue</code> statement, skips this iteration and continues with the next item.</li>
+                <li>The <code>pass</code> statement, which serves as a NOP. It is syntactically needed to create an empty code block.
+                    The assert statement, used during debugging to check for conditions that ought to apply.</li>
+                <li>The <code>yield</code> statement, which returns a value from a generator function. From Python 2.5, yield is also an operator. This form is used to implement coroutines.</li>
+                <li>The <code>import</code> statement, which is used to import modules whose functions or variables can be used in the current program. There are three ways of using import: <code>import <module name> [as <alias>]</code> or <code>from <module name> import *</code> or <code>from <module name> import <definition 1> [as <alias 1>], <definition 2> [as <alias 2>], ...</code>.</li>
+                <li>The <code>print</code> statement was changed to the <code>print()</code> function in Python 3.</li>
+            </ul></p>
+            <p>Python does not support tail call optimization or first-class continuations, and, according to Guido van Rossum, it never will. However, better support for coroutine-like functionality is provided in 2.5, by extending Python's generators. Before 2.5, generators were lazy iterators; information was passed unidirectionally out of the generator. From Python 2.5, it is possible to pass information back into a generator function, and from Python 3.3, the information can be passed through multiple stack levels.</p>
+        </article>
+    </section>
+
+
+    <section class="main-section" id="Expressions">
+        <header>Expressions</header>
+        <article>
+            <p>Some Python expressions are similar to languages such as C and Java, while some are not:</p>
+            <ul>
+                <li>Addition, subtraction, and multiplication are the same, but the behavior of division differs. There are two types of divisions in Python. They are floor division (or integer division) <code>//</code> and floating point <code>/</code> division. Python also added the <code>**</code> operator for exponentiation.</li>
+                <li>From Python 3.5, the new <code>@</code> infix operator was introduced. It is intended to be used by libraries such as NumPy for matrix multiplication.</li>
+                <li>From Python 3.8, the syntax <code>:=</code>, called the 'walrus operator' was introduced. It assigns values to variables as part of a larger expression.</li>
+                <li>In Python, <code>==</code> compares by value, versus Java, which compares numerics by value and objects by reference.(Value comparisons in Java on objects can be performed with the <code>equals()</code> method.) Python's <code>is</code> operator may be used to compare object identities (comparison by reference). In Python, comparisons may be chained, for example <code>a <= b <= c</code>. </li>
+                <li>Python uses the words <code>and</code>, <code>or</code>, <code>not</code> for its boolean operators rather than the symbolic <code>&&</code>, <code>||</code>, <code>!</code> used in Java and C.</li>
+                <li>Python has a type of expression termed a list comprehension. Python 2.4 extended list comprehensions into a more general expression termed a generator expression.</li>
+                <li>Anonymous functions are implemented using lambda expressions; however, these are limited in that the body can only be one expression.</li>
+                <li>Conditional expressions in Python are written as <code>x if c else y</code> (different in order of operands from the <code>c ? x : y</code> operator common to many other languages).</li>
+                <li>Python makes a distinction between lists and tuples. Lists are written as <code>[1, 2, 3]</code>, are mutable, and cannot be used as the keys of dictionaries (dictionary keys must be immutable in Python). Tuples are written as <code>(1, 2, 3)</code>, are immutable and thus can be used as the keys of dictionaries, provided all elements of the tuple are immutable. The <code>+</code> operator can be used to concatenate two tuples, which does not directly modify their contents, but rather produces a new tuple containing the elements of both provided tuples. Thus, given the variable <code>t</code> initially equal to <code>(1, 2, 3)</code>, executing <code>t = t + (4, 5)</code> first evaluates <code>t + (4, 5)</code>, which yields <code>(1, 2, 3, 4, 5)</code>, which is then assigned back to <code>t</code>, thereby effectively "modifying the contents" of <code>t</code>, while conforming to the immutable nature of tuple objects. Parentheses are optional for tuples in unambiguous contexts.</li>
+                <li>Python features sequence unpacking wherein multiple expressions, each evaluating to anything that can be assigned to (a variable, a writable property, etc.), are associated in the identical manner to that forming tuple literals and, as a whole, are put on the left hand side of the equal sign in an assignment statement. The statement expects an iterable object on the right hand side of the equal sign that produces the same number of values as the provided writable expressions when iterated through, and will iterate through it, assigning each of the produced values to the corresponding expression on the left.</li>
+                <li>Python has a "string format" operator <code>%</code>. This functions analogous to printf format strings in C, e.g. <code>"spam=%s eggs=%d" % ("blah", 2)</code> evaluates to <code>"spam=blah eggs=2"</code>. In Python 3 and 2.6+, this was supplemented by the <code>format()</code> method of the <code>str</code> class, e.g. <code>"spam={0} eggs={1}".format("blah", 2)</code>. Python 3.6 added "f-strings": <code>blah = "blah"; eggs = 2; f'spam={blah} eggs={eggs}'</code>.</li>
+                <li>Python has various kinds of string literals:
+                    <ul>
+                        <li>Strings delimited by single or double quote marks. Unlike in Unix shells, Perl and Perl-influenced languages, single quote marks and double quote marks function identically. Both kinds of string use the backslash (<code>\</code>) as an escape character. String interpolation became available in Python 3.6 as "formatted string literals".</li>
+                        <li>Triple-quoted strings, which begin and end with a series of three single or double quote marks. They may span multiple lines and function like here documents in shells, Perl and Ruby.</li>
+                        <li>Raw string varieties, denoted by prefixing the string literal with an <code>r</code>. Escape sequences are not interpreted; hence raw strings are useful where literal backslashes are common, such as regular expressions and Windows-style paths. Compare "<code>@</code>-quoting" in C#.</li></ul></li>
+                <li>Python has array index and array slicing expressions on lists, denoted as <code>a[key]</code>, <code>a[start:stop]</code> or <code>a[start:stop:step]</code>. Indexes are zero-based, and negative indexes are relative to the end. Slices take elements from the start index up to, but not including, the stop index. The third slice parameter, called step or stride, allows elements to be skipped and reversed. Slice indexes may be omitted, for example <code>a[:]</code> returns a copy of the entire list. Each element of a slice is a shallow copy.</li></ul>
+            <p>In Python, a distinction between expressions and statements is rigidly enforced, in contrast to languages such as Common Lisp, Scheme, or Ruby. This leads to duplicating some functionality. For example:</p>
+            <ul>
+                <li><a href="https://en.wikipedia.org/wiki/List_comprehension">List comprehensions</a> vs. for-loops</li>
+                <li><a href="https://en.wikipedia.org/wiki/Conditional_(computer_programming)">Conditional expressions</a> vs. if blocks</li>
+                <li>The <code>eval()</code> vs. <code>exec()</code> built-in functions (in Python 2, exec is a statement); the former is for expressions, the latter is for statements.</li></ul></p>
+            <p>Statements cannot be a part of an expression, so list and other comprehensions or lambda expressions, all being expressions, cannot contain statements. A particular case of this is that an assignment statement such as <code>a = 1</code> cannot form part of the conditional expression of a conditional statement. This has the advantage of avoiding a classic C error of mistaking an assignment operator <code>=</code> for an equality operator <code>==</code> in conditions: <code>if (c = 1) { ... }</code> is syntactically valid (but probably unintended) C code but <code>if c = 1: ...</code> causes a syntax error in Python.</p>
+        </article>
+    </section>
+
+
+    <section class="main-section" id="Methods">
+        <header>Methods</header>
+        <article>
+            <p>Methods on objects are functions attached to the object's class; the syntax <code>instance.method(argument)</code> is, for normal methods and functions, syntactic sugar for <code>Class.method(instance, argument)</code>. Python methods have an explicit self parameter to access instance data, in contrast to the implicit <code>self</code> (or <code>this</code>) in some other object-oriented programming languages (e.g., C++, Java, Objective-C, or Ruby).</p>
+        </article>
+    </section>
+
+
+    <section class="main-section" id="Typing">
+        <header>Typing</header>
+        <article>
+            <p>Python uses duck typing and has typed objects but untyped variable names. Type constraints are not checked at compile time; rather, operations on an object may fail, signifying that the given object is not of a suitable type. Despite being dynamically typed, Python is strongly typed, forbidding operations that are not well-defined (for example, adding a number to a string) rather than silently attempting to make sense of them.</p>
+
+            <p>Python allows programmers to define their own types using classes, which are most often used for object-oriented programming. New instances of classes are constructed by calling the class (for example, <code>SpamClass()</code> or <code>EggsClass()</code>), and the classes are instances of the metaclass <code>type</code> (itself an instance of itself), allowing metaprogramming and reflection.</p>
+
+            <p>Before version 3.0, Python had two kinds of classes: old-style and new-style. The syntax of both styles is the same, the difference being whether the class <code>object</code> is inherited from, directly or indirectly (all new-style classes inherit from <code>object</code> and are instances of <code>type</code>). In versions of Python 2 from Python 2.2 onwards, both kinds of classes can be used. Old-style classes were eliminated in Python 3.0.</p>
+
+            <p>The long term plan is to support gradual typing and from Python 3.5, the syntax of the language allows specifying static types but they are not checked in the default implementation, CPython. An experimental optional static type checker named mypy supports compile-time type checking.</p>
+
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Mutability</th>
+                    <th>Description</th>
+                    <th>Syntax examples</th>
+                </tr>
+                <tr>
+                    <td><code>bool</code></td>
+                    <td>immutable</td>
+                    <td>Boolean value</td>
+                    <td>
+                        <ul>
+                            <li><code>True</code></li>
+                            <li><code>False</code></li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>bytearray</code></td>
+                    <td>mutable</td>
+                    <td>Sequence of bytes</td>
+                    <td><ul>
+                        <li><code>bytearray(b'Some ASCII')</code></li>
+                        <li><code>bytearray(b"Some ASCII")</code></li>
+                        <li><code>bytearray([119, 105, 107, 105])</code></li>
+                    </ul></td>
+                </tr>
+                <tr>
+                    <td><code>bytes</code></td>
+                    <td>immutable</td>
+                    <td>Sequence of bytes</td>
+                    <td><ul>
+                        <li><code>b"Some ASCII"</code></li>
+                        <li><code>b"Some ASCII"</code></li>
+                        <li><code>bytes([119, 105, 107, 105])</code></li>
+                    </ul></td>
+                </tr>
+                <tr>
+                    <td><code>complex</code></td>
+                    <td>immutable</td>
+                    <td>Complex number with real and imaginary parts</td>
+                    <td><ul>
+                        <li><code>3+2.7j</code></li>
+                    </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>dict</code></td>
+                    <td>mutable</td>
+                    <td>Associative array (or dictionary) of key and value pairs; can contain mixed types (keys and values), keys must be a hashable type	</td>
+                    <td><ul>
+                        <li><code>{'key1': 1.0, 3: False}</code></li>
+                        <li><code>{}</code></li>
+                    </ul></td>
+                </tr>
+            </table>
+
+        </article>
+    </section>
+
+
+    <section class="main-section" id="Mathematics">
+        <header>Mathematics</header>
+        <article>
+            <p>Python has the usual symbols for arithmetic operators (<code>+</code>,<code> -</code>, <code>*</code>, <code>/</code>), the floor division operator // and the remainder operator <code>%</code> (where the remainder can be negative, e.g. <code>4 % -3 == -2</code>). It also has <code>**</code> for exponentiation, e.g. <code>5**3 == 125</code> and <code>9**0.5 == 3.0</code>, and a matrix multiply operator <code>@</code> . These operators work like in traditional math; with the same precedence rules, the operators infix ( <code>+</code> and <code>-</code> can also be unary to represent positive and negative numbers respectively).</p>
+
+            <p>Division between integers produces floating point results. The behavior of division has changed significantly over time:</p>
+            <ul>
+                <li>Python 2.1 and earlier used C's division behavior. The <code>/</code> operator is integer division if both operands are integers, and floating-point division otherwise. Integer division rounds towards 0, e.g. <code>7/3 == 2</code> and <code>-7/3 == -2</code>.</li>
+                <li>Python 2.2 changed integer division to round towards negative infinity, e.g. <code>7/3 == 2</code> and <code>-7/3 == -3</code>. The floor division <code>//</code> operator was introduced. So <code>7//3 == 2</code>, <code>-7//3 == -3</code>, <code>7.5//3 == 2.0</code> and <code>-7.5//3 == -3.0</code>. Adding <code>from __future__ import division</code> causes a module to use Python 3.0 rules for division (see next).</li>
+                <li>Python 3.0 changed <code>/</code> to always be floating-point division, e.g. <code>5/2 == 2.5</code>.</ul></li>
+            <p>In Python terms, <code>/</code> is true division (or simply division), and <code>//</code> is floor division. <code>/</code> before version 3.0 is classic division.</p>
+
+            <p>Rounding towards negative infinity, though different from most languages, adds consistency. For instance, it means that the equation <code>(a + b)//b == a//b + 1</code> is always true. It also means that the equation <code>b*(a//b) + a%b == a</code> is valid for both positive and negative values of <code>a</code>. However, maintaining the validity of this equation means that while the result of <code>a%b</code> is, as expected, in the half-open interval [0, b), where <code>b</code> is a positive integer, it has to lie in the interval (b, 0] when b is negative.</p>
+
+            <p>Python provides a <code>round</code> function for rounding a float to the nearest integer. For tie-breaking, Python 3 uses round to even: <code>round(1.5)</code> and <code>round(2.5)</code> both produce <code>2</code>. Versions before 3 used round-away-from-zero: <code>round(0.5)</code> is <code>1.0</code>, <code>round(-0.5)</code> is <code>−1.0</code>.</p>
+
+            <p>Python allows boolean expressions with multiple equality relations in a manner that is consistent with general use in mathematics. For example, the expression <code>a < b < c </code> tests whether <code>a</code> is less than <code>b</code> and <code>b</code> is less than <code>c</code>. C-derived languages interpret this expression differently: in C, the expression would first evaluate <code>a < b </code>, resulting in 0 or 1, and that result would then be compared with c.</p>
+
+            <p>Python uses arbitrary-precision arithmetic for all integer operations. The <code>Decimal</code> type/class in the <code>decimal</code> module provides decimal floating point numbers to a pre-defined arbitrary precision and several rounding modes. The <code>Fraction</code> class in the <code>fractions</code> module provides arbitrary precision for rational numbers.</p>
+
+            <p>Due to Python's extensive mathematics library, and the third-party library NumPy that further extends the native capabilities, it is frequently used as a scientific scripting language to aid in problems such as numerical data processing and manipulation.</p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Example">
+        <header>Example</header>
+        <article>
+            <p>Hello World program:</p>
+            <pre class="codeblock"><code>
+   print('Hello, world!')
+      </code></pre>
+            <p>Program to calculate the factorial of a positive integer:</p>
+            <pre class="codeblock">
+<code>
+  n = int(input('Type a number, and its factorial will be printed: '))
+
+  if n < 0:
+      raise ValueError('You must enter a positive integer')
+
+  fact = 1
+      i = 2
+  while i <= n:
+      fact *= i
+      i += 1
+
+  print(fact)
+      </code></pre>
+        </article>
+    </section>
+
+    <section class="main-section" id="References_&_Resources">
+        <header>References & Resources</header>
+        <article>
+            <p>Information above is taken from Wikipedia's page of <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python (programming language)</a>
+        </article>
+    </section>
+
+    <footer>
+        <div id="info">
+            <div id="info-box">
+                <a class="social-media" href="https://www.linkedin.com/in/ngocpham1994/"><img class="social-img" src="https://pngimage.net/wp-content/uploads/2018/06/picto-linkedin-png-8.png" alt=""></a>
+                <a class="social-media" href="#"><img class="social-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/CIS-A2K_Instagram_Icon_%28Black%29.svg/1024px-CIS-A2K_Instagram_Icon_%28Black%29.svg.png" alt=""</a>
+                <a class="social-media" href="#"><img class="social-img" src="https://cdn4.iconfinder.com/data/icons/miu-black-social-2/60/facebook-512.png" alt=""</a>
+                <a class="social-media" href="https://codepen.io/ngocpham1994x/"><img class="social-img" src="https://cdn0.iconfinder.com/data/icons/social-media-2091/100/social-32-512.png" alt=""></a>
+                <a class="social-media" href="https://cdn2.iconfinder.com/data/icons/black-white-social-media/64/social_media_logo_github-512.png" alt=""></a></div>
+            <em>&copy;2020 ngocpham1994x</em>
+        </div>
+    </footer>
+
+</main>
