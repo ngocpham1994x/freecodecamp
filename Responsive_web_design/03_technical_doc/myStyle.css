@@ -1,0 +1,306 @@
+ /* Setting a base font size of 10px give us easier rem calculations
+     Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+   */
+
+   html{
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body{
+    background: darkblue;
+  }
+  
+  /*Desktop laptop look
+  @media (min-width: 1025px) and (max-width: 1440px) {  */
+  /*page overview look*/
+  #page{
+    margin: 0 auto;
+    max-width: 900px;
+    height: auto;
+    background: white;
+    display: grid;
+    grid-template-rows: repeat (8, auto) ;
+    grid-template-columns: auto;
+    grid-template-areas: 
+      "header"
+      "product-name"
+      "feature"
+      "how"
+      "pricing"
+      "form"
+      "note"
+      "footer";
+  }
+  
+  header{
+    position: sticky; /*keep header being on top while scrolling, also stick to the margin of #page element, also push the product-name down to its proper location*/
+    top: 0;
+    min-height: 7.5rem; /*=75px & limit the height of header when scrolling*/
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    background: lightgray;
+  }
+  
+  #product-name{
+    grid-area: product-name;
+    text-align: center;
+    font-size: 22px;  
+  }
+  
+  #feature{
+    grid-area:feature;
+  }
+  
+  #how{
+    grid-area:how;
+  }
+  
+  #pricing{
+    grid-area:pricing;
+  }
+  
+  form{
+    grid-area:form;
+  }
+  
+  #note{
+    grid-area:note;
+  }
+  
+  footer{
+    grid-area:footer;
+    background: lightgray;
+  }
+  
+  
+  
+  
+  /*global class styling*/
+  
+  #header-img, #header-img2 {
+    display: block;
+    max-width:130px;
+    max-height:50px;
+    width: auto;
+    height: auto;
+    grid-area: header-img;
+  }
+  
+  figure{
+    width: 25rem;
+   display: flex;
+   justify-content: space-evenly;
+  }
+  
+  /*#nav-bar*/
+  nav ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end; /*double-sure nav-links are on right end*/
+      padding-right: 50px;
+      list-style-type: none; /*make bullet points disappear*/
+    }
+  
+  .nav-link{
+    border: 2.5px solid darkblue;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: darkblue; /*text color*/
+    text-decoration: none; /*no underline*/
+  }
+  
+  .icon {
+     object-fit: contain;
+     max-width: 100%;
+     max-height: 100%;
+     width: 100px;
+     height: 100px;
+    border-right: 0.2rem solid lightgray;
+  } 
+  
+  /*features styling*/
+  .feature-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2.5rem 10rem;
+    margin: 2.5rem;
+  }
+  
+  .fea-content{
+    padding: 0rem 1rem;
+    margin: -2rem 0rem;
+    font-size: 1.5rem;
+  }
+  
+  .desc{
+    margin: -1rem 0;
+  }
+  
+  
+  /*how (video)*/
+  #how {
+     display: flex;
+    justify-content: center;
+    margin: 2.5rem;
+  }
+  
+  
+  
+  /*Pricing section style*/
+  #pricing{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2.5rem; /*space above & below boxes*/
+  }
+  
+  .pricing-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% / 3);
+    margin: 15px;
+    border: 1px solid #000; /* border thickness, color */
+    border-radius: 1rem;
+  }
+  
+  .price-title{
+    background-color: white; 
+    color: black;
+    padding: 0px;
+    width: 200px;
+    height: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+  }
+  
+  .price{
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  .price-img{
+     object-fit: contain;
+     max-width: 100%;
+     max-height: 100%;
+     width: 10rem;
+     height: 10rem;
+  }
+  
+  .price-features{
+   width: auto;
+  }
+  
+  .price-ul{
+    padding-left: 3.5rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  
+  
+  
+  
+  /*Subscription box*/
+  form{
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      width: 50%;
+      margin: 2rem auto;
+      padding: 0.5rem 0.5rem;
+  }
+  
+  #note{
+    text-align: center;
+    margin: 2.5rem;
+  }
+  
+  
+  
+  /*footer styling*/
+  footer{
+    font-size: 1.5rem;
+    text-align: right;
+  }
+  
+  .foot-link{
+    text-decoration: none; /*no underline*/
+    color: black;
+    padding: 1rem;
+  }
+   
+  #info{
+    padding-right: 50px;
+  }
+  
+  #info-box{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    margin-top: -1rem;
+    margin-right: -1rem;
+  }
+  
+  .btn{
+    border-radius: 1rem;
+  }
+  .btn:hover{
+    transform: scale(1.2);
+    background-color: royalblue;
+    color: white;
+  }
+  
+  
+  .social-media{
+    padding: 1rem;
+  }
+  /*
+  .social-media:hover{
+    transform: scale(2);
+    cursor: pointer;
+  }  */
+  
+  .social-img{
+    display: block;
+    max-width:130px;
+    max-height:30px;
+    width: auto;
+    height: auto;
+  }
+  
+  
+  /*media query*/
+  @media (max-width:800px){
+    nav ul{
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    
+    .nav-link{
+    border: none;
+  }
+  
+    #pricing{
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
+  
+  }
+  
