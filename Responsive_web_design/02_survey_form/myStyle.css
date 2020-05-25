@@ -1,0 +1,140 @@
+
+html{
+    /* no style */
+  }
+  
+  :root {
+    --color-white: #000;
+    --color-lightsalmon: #FFA07A;
+    --color-green: #8FBC8F;
+  }
+  
+  /* "*" means wild card*/
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  /*Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth*/
+  body {
+    font-family: 'consolas', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.4; /*spacing of lines*/
+    color: var(--color-white);
+    margin: 0;
+  }
+  
+  /* mobile friendly alternative to using background-attachment: fixed */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: var(--color-lightsalmon); /*not neccessary*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(
+       115deg,
+        rgba(255,160,122,0.7),
+        rgba(250,128,114, 0.7)
+      ),
+      
+      url(https://cdn.britannica.com/90/153890-050-32CB447A/Administration-Building-University-of-Manitoba-Winnipeg-Canada.jpg);
+  
+  }
+  
+  header, footer {
+    text-align: center;
+  }
+  
+  #logo > img {
+    width: 150px;
+  }
+  
+  #logo { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  #logo .line {
+    background: white;
+    width: 100px;
+    height: 1px;
+  }
+  
+  /* form */
+  #survey-form{
+      background: rgba(255,255, 255, 0.1);
+      box-shadow: 0px 16px 16px 16px rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(5px);
+      border-radius: 1rem;
+      width: 70%;
+      margin: 2rem auto;
+      padding: 2rem 3rem;
+  }
+  
+  /*typed input (name, email, year)*/
+  .form-control {
+    display: block;
+    width: 100%;
+    height: 2.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057; /*placeholder's text color*/
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+  
+  /*
+  .form-control:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  } */
+  
+  
+  .input-radio,
+  .input-checkbox {
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-height: 1.25rem;
+    min-width: 1.25rem;
+  }
+  
+  .input-textarea {
+    min-height: 120px;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    resize: vertical;
+  }
+  
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--color-green);
+    color: inherit;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight:bold;
+  }
+  
+  .reset-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: indianred;
+    color: inherit;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight:bold;
+  }
